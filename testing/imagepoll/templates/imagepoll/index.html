@@ -1,0 +1,7 @@
+<h3><center>Select a poll to begin voting</center></h3>
+<h4><ul style='width:400px; margin:0 auto; text-align: left;'>
+{% for question in questions %}
+<li><a href='{% url 'questionview' question.id %}'>{{ question.question_text }}
+	</a><br><br>
+{% endfor %}
+</ul></h4>

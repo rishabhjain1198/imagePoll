@@ -1,0 +1,16 @@
+<h5> DETAIL TEMPLATE TO BE APPLIED HERE </h5>
+<h3><center>{{ question.question_text }}</center></h3>
+<h4> <center>{{ question.pub_date }} </center></h4>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'vote' question.id %}" method="post">
+{% csrf_token %}
+{% for choice in question.choice_set.all %}
+	<input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+	<label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
+	<br> <br>
+{% endfor %}
+<input type="submit" value"Vote" style="height:5%;width:15%;-webkit-appearance:none; font-size: 1.4em;" />
+</form>
+</center>

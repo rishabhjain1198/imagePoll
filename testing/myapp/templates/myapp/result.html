@@ -1,0 +1,8 @@
+<h6>RESULT TEMPLATING BEGINS HERE (Votes shown for each question)</h6>
+<h4>{{ question.question_text }}</h4>
+<h3>
+{% for choice in choices %}
+{{ choice.choice_text }} - {{ choice.votes }}
+<br>
+{% endfor %}
+</h3>

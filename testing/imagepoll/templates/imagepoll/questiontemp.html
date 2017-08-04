@@ -1,0 +1,14 @@
+{% load static %}
+{% static "" as baseUrl %}
+<h5><center>Cast your vote!</center><h5>
+<h3><center>{{ question.question_text }}</center></h3>
+<h4><center>{{ question.by_user }}</center></h4>
+TO BE COMPLETED BY SERVING STATIC FILES (read the fucking docs) <br><br>
+<center>
+
+<img src="{{ baseUrl }}imagepoll/images/{{ question.id }}/l.png" width="128" height="128" style="padding: 25px">
+
+<img src="{{ baseUrl }}imagepoll/images/{{ question.id }}/r.png" width="128" height="128" style="padding: 25px">
+
+</center>
+
